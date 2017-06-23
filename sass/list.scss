@@ -1,0 +1,149 @@
+@import "normalize6.0";
+@import "base";
+
+html,body,.list_layout{
+  height: 100%;
+}
+//样式开始
+.list_layout{
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+//头部区域样式========================================
+header {
+  height: 45px;
+  padding: 0 60px;
+  background: linear-gradient(to bottom, #ffffff, #CCCCCC);
+  position: relative;
+  a {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 12px;
+  }
+  input {
+    width: 100%;
+    height: 30px;
+    margin-top: 7px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px pink;
+  }
+  a:nth-child(1) {
+    left: 20px;
+    background: url("../images/sprites.png") no-repeat -20px 0;
+    background-size: 200px 200px;
+  }
+
+  a:nth-child(3) {
+    right: 20px;
+    background: url("../images/sprites.png") no-repeat -60px 0;
+    background-size: 200px 200px;
+  }
+}
+
+//内容部分样式开始了======================================================
+main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  nav {
+    width: 90px;
+  }
+  .right {
+    flex: 1;
+  }
+}
+
+//左侧的导航样式
+nav {
+  a {
+    width: 100%;
+    height: 50px;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    color: #000000;
+    font-size: 14px;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+  }
+}
+//右侧内容部分样式
+.right{
+  width: 100%;
+  padding: 10px;
+}
+.banner{
+  a{
+    display: block;
+    width: 100%;
+    img{
+      width: 100%;
+    }
+  }
+}
+
+.right{
+  h3{
+    font-size: 14px;
+    text-align: left;
+    padding: 8px 0;
+  }
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    li{
+      width: 33.3333333333333%;
+      a{
+        display: block;
+        width: 100%;
+        img{
+          width: 60%;
+          margin: 0 auto;
+        }
+        p{
+          text-align: center;
+          margin: 8px 0;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+
+//清除a标签高亮
+a{
+  -webkit-tap-highlight-color: transparent;
+}
+
+//给当前点击变色
+nav a.current{
+  color: rgb(201, 21, 35);
+  border-right: none;
+}
+
+//让滑动部分高度自适应
+.swiper-slide {
+  height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

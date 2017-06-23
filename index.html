@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>标题</title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <!--为轮播图前后各增减一张-->
+    <style>
+        .jd-banner .banner-images {
+            width: 1000%;
+            transform: translatex(-10%);
+        }
+
+        .jd-layout .jd-banner .banner-images li {
+            width: 10%
+        }
+    </style>
+    <script src="js/index.js"></script>
+    <script src="js/zepto/zepto.js"></script>
+    <script src="js/zepto/event.js"></script>
+    <script src="js/zepto/touch.js"></script>
+    <script src="js/zepto/fx.js"></script>
+    <script>
+        $(function () {
+            var num = 1;
+            var wid = $(".jd-banner").width();
+            $(".jd-banner").swipeLeft(function () {
+                num++;
+                $(".banner-images").animate({
+                    transform: "translateX(" + -wid * num + "px)"
+                }, 500, function () {
+                    if (num == 9) {
+                        num = 1;
+                        $(".banner-images").css("transform", "translateX(" + -wid * num + "px)");
+                    }
+                    $(".banner-dotted li").eq(num - 1).addClass("current").siblings().removeClass("current");
+                });
+
+                console.log(num);
+            }).swipeRight(function () {
+                num--;
+                $(".banner-images").animate({
+                    transform: "translateX(" + -wid * num + "px)"
+                }, 500, function () {
+                    if (num == 0) {
+                        num = 8;
+                        $(".banner-images").css("transform", "translateX(" + -wid * num + "px)");
+                    }
+                    $(".banner-dotted li").eq(num - 1).addClass("current").siblings().removeClass("current");
+                })
+                console.log(num);
+
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="jd-layout">
+    <!--header部分==================================-->
+    <header>
+        <a href="javascript:;" class="logo"></a>
+        <span></span>
+        <input type="search" class="scarch" placeholder="请输入搜索内容"/>
+        <a href="javascript:;" class="login">登陆</a>
+    </header>
+    <!--轮播图部分=============================-->
+    <div class="jd-banner">
+        <!--图片部分-->
+        <ul class="banner-images clearfix">
+            <li><a href="javascript:;"><img src="images/l8.jpg" alt=""/></a></li>
+            <li><a href="javascript:;"><img src="images/l1.jpg" alt=""/></a></li>
+            <li><a href="javascript:;"><img src="images/l2.jpg" alt=""/></a></li>
+            <li><a href="javascript:;"><img src="images/l3.jpg" alt=""/></a></li>
+            <li><a href="javascript:;"><img src="images/l4.jpg" alt=""/></a></li>
+            <li><a href="javascript:;"><img src="images/l5.jpg" alt=""/></a></li>
+            <li><a href="javascript:;"><img src="images/l6.jpg" alt=""/></a></li>
+            <li><a href="javascript:;"><img src="images/l7.jpg" alt=""/></a></li>
+            <li><a href="javascript:;"><img src="images/l8.jpg" alt=""/></a></li>
+            <li><a href="javascript:;"><img src="images/l1.jpg" alt=""/></a></li>
+        </ul>
+        <!--小点点部分============-->
+        <ul class="banner-dotted clearfix">
+            <li class="fl current"></li>
+            <li class="fl"></li>
+            <li class="fl"></li>
+            <li class="fl"></li>
+            <li class="fl"></li>
+            <li class="fl"></li>
+            <li class="fl"></li>
+            <li class="fl"></li>
+        </ul>
+    </div>
+    <!--nav导航栏部分==========================================-->
+    <!--nav>ul.navlist>li*8>a[href="javascript:;]>img[src="images/nav$.png"]+p{分类查询}             -->
+    <nav>
+        <ul class="navlist">
+            <li>
+                <a href="javascript:;">
+                    <img src="images/nav0.png" alt=""/>
+
+                    <p>分类查询</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/nav1.png" alt=""/>
+
+                    <p>分类查询</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/nav2.png" alt=""/>
+
+                    <p>分类查询</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/nav3.png" alt=""/>
+
+                    <p>分类查询</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/nav4.png" alt=""/>
+
+                    <p>分类查询</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/nav5.png" alt=""/>
+
+                    <p>分类查询</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/nav6.png" alt=""/>
+
+                    <p>分类查询</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/nav7.png" alt=""/>
+
+                    <p>分类查询</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!--内容部分开始了========================>-->
+    <main>
+        <!--秒杀部分-->
+        <section class="sec-kill">
+            <div class="top">
+                <div class="top-left">
+                    <div class="clock"></div>
+                    <h3>掌上秒杀</h3>
+                    <ul>
+                        <li>0</li>
+                        <li>0</li>
+                        <li>:</li>
+                        <li>0</li>
+                        <li>0</li>
+                        <li>:</li>
+                        <li>0</li>
+                        <li>0</li>
+                    </ul>
+                </div>
+                <div class="top-right">
+                    <a href="javascript:;">更多&gt;</a>
+                </div>
+            </div>
+            <div class="bottom">
+                <ul class="pic">
+                    <li>
+                        <a href="javascript:;"><img src="images/detail01.jpg" alt=""/></a>
+
+                        <p>￥100.00</p>
+
+                        <p>￥199</p>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="images/detail02.jpg" alt=""/></a>
+
+                        <p>￥100.00</p>
+
+                        <p>￥199</p>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="images/detail01.jpg" alt=""/></a>
+
+                        <p>￥100.00</p>
+
+                        <p>￥199</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--秒杀部分完结-->
+        <section>
+            <div class="top"><h3>京东超市</h3></div>
+            <div class="bottom clearfix">
+                <a href="javascript:;" class="fl bdr">
+                    <img src="images/cp1.jpg" alt=""/>
+                </a>
+                <a href="javascript:;" class="fr bdb">
+                    <img src="images/cp2.jpg" alt=""/>
+                </a>
+                <a href="javascript:;" class="fr">
+                    <img src="images/cp3.jpg" alt=""/>
+                </a>
+            </div>
+        </section>
+        <section>
+            <div class="top"><h3>京东超市</h3></div>
+            <div class="bottom clearfix">
+                <a href="javascript:;" class="fr bdl bdwhite">
+                    <img src="images/cp4.jpg" alt=""/>
+                </a>
+                <a href="javascript:;" class="fl bdb bdwhite">
+                    <img src="images/cp5.jpg" alt=""/>
+                </a>
+                <a href="javascript:;" class="fl">
+                    <img src="images/cp6.jpg" alt=""/>
+                </a>
+            </div>
+        </section>
+        <section>
+            <div class="top"><h3>京东超市</h3></div>
+            <div class="bottom clearfix">
+                <a href="javascript:;" class="fl bdr">
+                    <img src="images/cp1.jpg" alt=""/>
+                </a>
+                <a href="javascript:;" class="fr bdb">
+                    <img src="images/cp2.jpg" alt=""/>
+                </a>
+                <a href="javascript:;" class="fr">
+                    <img src="images/cp3.jpg" alt=""/>
+                </a>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>

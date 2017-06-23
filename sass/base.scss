@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix::before, .clearfix::after {
+  content: "";
+  display: table;
+  visibility: hidden;
+  overflow: hidden;
+  line-height: 0;
+  height: 0;
+  clear: both;
+}
+.bdl{
+  border-left: 1px solid #ccc;
+}
+.bdr{
+  border-right: 1px solid #ccc;
+}
+.bdt{
+  border-top: 1px solid #ccc;
+}
+.bdb{
+  border-bottom: 1px solid #ccc;
+}
+.bdwhite{
+  border-color: #ffffff;
+}
